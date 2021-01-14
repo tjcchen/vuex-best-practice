@@ -7,17 +7,17 @@
     <div class="fecth-btn">
       <button @click="fetchTodos()">fetchData</button>
     </div>
-    <div class="display-data">
-      {{ todos }}
-    </div>
+    <Todos />
   </div>
 </template>
 
 <script>
+import Todos from './components/Todos';
+
 export default {
   name: 'App',
   components: {
-    
+    Todos
   },
   data: function() {
     return {
@@ -32,15 +32,12 @@ export default {
   computed: {
     loadingStatus() {
       return this.$store.state.loadingStatus
-    },
-    todos() {
-      return this.$store.state.todos
     }
   }
 }
 </script>
 
-<style>
+<style lang="less">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -48,9 +45,19 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
-#app .header-logo {
-  width: 100px;
-  height: 100px;
+
+  .header-logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  button {
+    width: 120px;
+    height: 36px;
+    background: pink;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+  }
 }
 </style>

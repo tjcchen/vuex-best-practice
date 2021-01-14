@@ -21,12 +21,17 @@ const store = new Vuex.Store({
   },
   actions: {
     fetchTodos(context) {
-      context.commit('SET_LOADING_STATUS', 'loading');
+      context.commit('SET_LOADING_STATUS', 'loading...');
 
-      axios.get('http://www.colr.org/json/color/random').then(response => {
+      axios.get('http://www.colr.org/json/colors/random/7').then(response => {
         context.commit('SET_LOADING_STATUS', 'notLoading');
         context.commit('SET_TODOS', response.data.colors);
       });
+    }
+  },
+  getters: {
+    getTodos(state) {
+      return state.todos.filter(todo => todo.hex !== '');
     }
   }
 });
