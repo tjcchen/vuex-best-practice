@@ -1,0 +1,20 @@
+{
+  "name": "vuex-best-practice",
+  "version": "1.0.0",
+  "description": "A best practice demo project with vue and vuex",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tjcchen/vuex-best-practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tjcchen/vuex-best-practice/issues"
+  },
+  "homepage": "https://github.com/tjcchen/vuex-best-practice#readme"
+}
