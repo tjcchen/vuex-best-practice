@@ -12,6 +12,7 @@
 </template>
 
 <script>
+// @ts-ignore
 import Todos from './components/Todos';
 
 export default {
