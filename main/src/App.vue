@@ -1,14 +1,21 @@
 <template>
   <div id="app">
-    <div>{{ greeting }} : {{ $store.state.userInfo.email }}</div>
+    <div class="basic-info">
+      <h3>basic information</h3>
+      <div>{{ greeting }} : {{ email }}</div>
+      <div>Website: {{ website }}</div>
+    </div>
+    <hr/>
     <ProductList />
+    <hr/>
     <ShoppingCart />
   </div>
 </template>
 
 <script>
-import ProductList from './components/ProductList';
-import ShoppingCart from './components/ShoppingCart';
+import { mapState } from 'vuex';
+import ProductList from '@/components/ProductList';
+import ShoppingCart from '@/components/ShoppingCart';
 
 export default {
   name: 'App',
@@ -18,14 +25,13 @@ export default {
   },
   data: function() {
     return {
-      greeting: 'VueJS'
+      greeting: 'Vuex'
     };
   },
-  computed: {
-    products() {
-      return null;
-    }
-  }
+  computed: mapState({
+    email: state => state.userInfo.email,
+    website: state => state.website  
+  })
 }
 </script>
 

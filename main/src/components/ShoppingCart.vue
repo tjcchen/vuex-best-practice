@@ -1,6 +1,9 @@
 <template>
   <div class="shopping-cart">
-    {{ module }}
+    <h3>{{ module }}</h3>
+    <div classs="shopping-cart-info">
+      Shopping Cart Info
+    </div>
   </div>
 </template>
 

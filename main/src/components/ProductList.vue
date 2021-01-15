@@ -1,6 +1,9 @@
 <template>
   <div class="product-list">
-    {{ module }}
+    <h3>{{ module }}</h3>
+    <div class="product-list-info">
+      Product List
+    </div>
   </div>
 </template>
 
