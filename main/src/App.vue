@@ -1,19 +1,21 @@
 <template>
   <div id="app">
     <div>{{ greeting }} : {{ $store.state.userInfo.email }}</div>
-    <div>
-      cart: {{ $store.state.cart.module }}
-    </div>
-    <div>
-      products: {{ $store.state.products.module }}
-    </div>
+    <ProductList />
+    <ShoppingCart />
   </div>
 </template>
 
 <script>
+import ProductList from './components/ProductList';
+import ShoppingCart from './components/ShoppingCart';
+
 export default {
   name: 'App',
-  components: {},
+  components: {
+    ProductList,
+    ShoppingCart
+  },
   data: function() {
     return {
       greeting: 'VueJS'
