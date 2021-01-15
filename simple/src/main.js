@@ -9,29 +9,29 @@ Vue.config.productionTip = false
 const store = new Vuex.Store({
   state: {
     loadingStatus: 'notLoading',
-    todos: []
+    colors: []
   },
   mutations: {
     SET_LOADING_STATUS(state, status) {
       state.loadingStatus = status;
     },
-    SET_TODOS(state, todos) {
-      state.todos = todos;
+    SET_COLORS(state, colors) {
+      state.colors = colors;
     }
   },
   actions: {
-    fetchTodos(context) {
+    fetchColors(context) {
       context.commit('SET_LOADING_STATUS', 'loading...');
 
       axios.get('http://www.colr.org/json/colors/random/7').then(response => {
         context.commit('SET_LOADING_STATUS', 'notLoading');
-        context.commit('SET_TODOS', response.data.colors);
+        context.commit('SET_COLORS', response.data.colors);
       });
     }
   },
   getters: {
-    getTodos(state) {
-      return state.todos.filter(todo => todo.hex !== '');
+    getColors(state) {
+      return state.colors.filter(color => color.hex !== '');
     }
   }
 });

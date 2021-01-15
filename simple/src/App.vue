@@ -5,20 +5,20 @@
       {{ greeting }} {{ loadingStatus }}
     </div>
     <div class="fecth-btn">
-      <button @click="fetchTodos()">fetchData</button>
+      <button @click="fetchColors()">fetchData</button>
     </div>
-    <Todos />
+    <Colors />
   </div>
 </template>
 
 <script>
 // @ts-ignore
-import Todos from './components/Todos';
+import Colors from './components/Colors';
 
 export default {
   name: 'App',
   components: {
-    Todos
+    Colors
   },
   data: function() {
     return {
@@ -26,8 +26,8 @@ export default {
     };
   },
   methods: {
-    fetchTodos: function() {
-      this.$store.dispatch('fetchTodos');
+    fetchColors: function() {
+      this.$store.dispatch('fetchColors');
     },
   },
   computed: {

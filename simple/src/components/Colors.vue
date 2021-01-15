@@ -1,6 +1,6 @@
 <template>
   <div class="items-box">
-    <div class="item" v-for="item in todos" v-bind:key="item.id">
+    <div class="item" v-for="item in colors" v-bind:key="item.id">
       color: {{ item.hex }} - timestamp: {{ item.timestamp }}
     </div>
   </div>
@@ -8,10 +8,10 @@
 
 <script>
 export default {
-  name: 'Todo',
+  name: 'Colors',
   computed: {
-    todos() {
-      return this.$store.getters.getTodos
+    colors() {
+      return this.$store.getters.getColors
     }
   }
 };
