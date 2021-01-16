@@ -2,7 +2,7 @@
   <div id="app">
     <div class="basic-info">
       <h3>basic information</h3>
-      <div>{{ username }} : {{ email }}</div>
+      <div>{{ username }}: {{ email }}</div>
       <div>Website: {{ website }}</div>
     </div>
     <hr/>

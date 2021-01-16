@@ -1,5 +1,11 @@
 ## vuex-best-practice
-A codes organization best practice project of Vuex. At present, we are still implementing this project with VUE2.
+A code organization best practice project of Vuex. At present, we are still implementing this project with VUE2.
+
+## Run This Application
+```
+root directory: npm run serve
+```
+Note: there is also a very simple code example in /simple folder for people to get a basic understanding of Vuex.
 
 ## Documentation
 Vuex: https://vuex.vuejs.org/
