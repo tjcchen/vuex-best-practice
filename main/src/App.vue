@@ -2,7 +2,7 @@
   <div id="app">
     <div class="basic-info">
       <h3>basic information</h3>
-      <div>{{ greeting }} : {{ email }}</div>
+      <div>{{ username }} : {{ email }}</div>
       <div>Website: {{ website }}</div>
     </div>
     <hr/>
@@ -26,7 +26,7 @@ export default {
   },
   data: function() {
     return {
-      greeting: 'Vuex'
+      username: 'Username'
     };
   },
   computed: mapState({
