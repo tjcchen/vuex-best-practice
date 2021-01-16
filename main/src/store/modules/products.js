@@ -3,7 +3,7 @@ import { PRODUCTS } from '../mutation-types';
 
 const state = {
   all: [],
-  moduleName: 'products'
+  module: 'products'
 };
 
 const mutations = {
@@ -25,9 +25,7 @@ const actions = {
 };
 
 const getters = {
-  getModule(state) {
-    return state.moduleName;
-  }
+  module: state => state.module
 };
 
 export default {

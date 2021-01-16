@@ -5,6 +5,10 @@
       <ul>
         <li v-for="product in products" :key="product.id">
           {{ product.title }} - {{ product.price }} - {{ product.inventory }}
+  
+          <button :disabled="!product.inventory" @click="addToCart(product)">
+            Add To Shopping Cart
+          </button>
         </li>
       </ul>
     </div>
@@ -18,16 +22,22 @@ export default {
   name: 'ProductList',
   // data: function() {
   //   return {
-  //     module: this.$store.getters['products/getModule']
+  //     module: this.$store.getters['products/module']
   //   }
   // },
   computed: mapState({
     moduleName: state => state.products.moduleName,
     products: state => state.products.all
   }),
+  methods: {
+    addToCart: function(product) {
+      alert('add to cart');
+
+      // this.$store.dispatch('cart/addProductToCart', product);
+    }
+  },
   created: function() {
-    // fetch data from mock API
-    this.$store.dispatch('products/getAllProducts');
+    this.$store.dispatch('products/getAllProducts'); // fetch data from mock API
   }
 }
 </script>
