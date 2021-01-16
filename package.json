@@ -1,0 +1,20 @@
+{
+  "name": "vuex-best-practice",
+  "version": "1.0.0",
+  "description": "A codes organization best practice project of Vuex. At present, we are still implementing this project with VUE2.",
+  "main": "index.js",
+  "scripts": {
+    "serve": "main/node_modules/.bin/vue-cli-service serve main/src/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tjcchen/vuex-best-practice.git"
+  },
+  "keywords": [],
+  "author": "Andy Chen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tjcchen/vuex-best-practice/issues"
+  },
+  "homepage": "https://github.com/tjcchen/vuex-best-practice#readme"
+}

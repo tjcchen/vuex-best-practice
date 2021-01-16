@@ -14,8 +14,8 @@
 
 <script>
 import { mapState } from 'vuex';
-import ProductList from '@/components/ProductList';
-import ShoppingCart from '@/components/ShoppingCart';
+import ProductList from './components/ProductList';
+import ShoppingCart from './components/ShoppingCart';
 
 export default {
   name: 'App',
