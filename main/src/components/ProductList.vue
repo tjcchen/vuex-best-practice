@@ -1,6 +1,6 @@
 <template>
   <div class="product-list">
-    <h3>{{ moduleName }}</h3>
+    <h3>{{ module }}</h3>
     <div class="product-list-info">
       <ul>
         <li v-for="product in products" :key="product.id">
@@ -20,25 +20,23 @@ import { mapState } from 'vuex';
 
 export default {
   name: 'ProductList',
+  computed: mapState({
+    module: state => state.products.module,
+    products: state => state.products.all
+  }),
+  methods: {
+    addToCart: function(product) {
+      this.$store.dispatch('cart/addProductToCart', product);
+    }
+  },
+  created: function() {
+    this.$store.dispatch('products/getAllProducts'); // fetch data from mock API
+  },
   // data: function() {
   //   return {
   //     module: this.$store.getters['products/module']
   //   }
   // },
-  computed: mapState({
-    moduleName: state => state.products.moduleName,
-    products: state => state.products.all
-  }),
-  methods: {
-    addToCart: function(product) {
-      alert('add to cart');
-
-      // this.$store.dispatch('cart/addProductToCart', product);
-    }
-  },
-  created: function() {
-    this.$store.dispatch('products/getAllProducts'); // fetch data from mock API
-  }
 }
 </script>
 

@@ -8,6 +8,11 @@
           {{ product.title }} - {{ product.price }} * {{ product.quantity }}
         </li>
       </ul>
+      <p>Total: {{ total }}</p>
+      <p>
+        <button :disabled="!products.length" @click="checkout(products)">Submit Order</button>
+      </p>
+      <p v-show="checkoutStatus">Submit {{ checkoutStatus }}</p>
     </div>
   </div>
 </template>
@@ -22,16 +27,21 @@ export default {
       module: state => state.cart.module,
     }),
     ...mapGetters({
-      products: 'cart/cartProducts'
+      total: 'cart/cartTotalPrice',
+      products: 'cart/cartProducts',
+      checkoutStatus: 'cart/checkoutStatus',
     })
+  },
+  methods: {
+    checkout(products) {
+      this.$store.dispatch('cart/checkout', products);
+    }
   },
   // computed: {
   //   module() {
   //     return this.$store.getters['cart/getModule']
   //   }
   // },
-
-
 }
 </script>
 
