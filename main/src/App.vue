@@ -13,6 +13,7 @@
 </template>
 
 <script>
+// @ts-nocheck
 import { mapState } from 'vuex';
 import ProductList from './components/ProductList';
 import ShoppingCart from './components/ShoppingCart';
